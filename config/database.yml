@@ -6,6 +6,9 @@
 development:
   adapter: sqlite3
   database: db/development.sqlite3
+  host: localhost
+  username: smythe1
+  password: 
   pool: 5
   timeout: 5000
 
@@ -15,12 +18,18 @@ development:
 test: &test
   adapter: sqlite3
   database: db/test.sqlite3
+  host: localhost
+  username: smythe1
+  password: 
   pool: 5
   timeout: 5000
 
 production:
   adapter: sqlite3
   database: db/production.sqlite3
+  host: localhost
+  username: smythe1
+  password:
   pool: 5
   timeout: 5000
 
