@@ -25,13 +25,17 @@ test: &test
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  host: localhost
-  username: smythe1
-  password:
-  pool: 5
-  timeout: 5000
-
+    adapter: postgresql
+    encoding: unicode
+    # For details on connection pooling, see rails configuration guide
+    # http://guides.rubyonrails.org/configuring.html#database-pooling
+    pool: 5
+    username: smythe1
+    password:
+    timeout: 5000
+  #adapter: sqlite3
+  #database: db/production.sqlite3
+  #host: localhost
+ 
 cucumber:
   <<: *test
