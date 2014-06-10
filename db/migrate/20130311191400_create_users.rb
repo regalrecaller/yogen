@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.integer	:userid
       t.timestamps
+        t.ipaddress :ipaddress
     end
   end
 end

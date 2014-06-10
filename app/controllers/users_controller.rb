@@ -17,6 +17,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+#  def ipaddress
+#    @ipaddress = @user.ipaddress.???????
+#  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -30,6 +34,9 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+#    def ipaddress
+#    end
 
   def update
     if @user.update_attributes(user_params)

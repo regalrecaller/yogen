@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+#  def User.new_ipaddress_token
+#      JSON(input?????
+#  end
   def User.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
@@ -44,4 +47,8 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = User.digest(User.new_remember_token)
     end
+
+#    def create_ipaddress_token
+#        self.ipaddress_token - User.digest(User.new_ipaddress_token)
+#    end
 end

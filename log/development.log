@@ -4867,3 +4867,120 @@ Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-06-08 
 
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-06-08 18:12:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (3.2ms)[0m  [1mDROP TABLE "microposts"[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.8ms)[0m  [1mCREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")[0m
+  [1m[35m (4.2ms)[0m  DROP TABLE "relationships"
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (2.8ms)[0m  CREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35m (2.1ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36m (2.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime, "password_digest" varchar(255), "remember_token" varchar(255), "admin" boolean) 
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.1ms)[0m  CREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (2.4ms)[0m  CREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (2.2ms)[0m  CREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35m (2.1ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime, "password_digest" varchar(255), "remember_token" varchar(255), "admin" boolean) [0m
+  [1m[35m (6.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (2.1ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130315230445')[0m
+  [1m[35m (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130311191400')
+  [1m[36m (5.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130311194153')[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130311201841')
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130314184954')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130315015932')
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130315175534')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRelationships (20130315230445)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.4ms)[0m  DROP INDEX "index_relationships_on_follower_id_and_followed_id"
+  [1m[36m (1.4ms)[0m  [1mDROP INDEX "index_relationships_on_followed_id"[0m
+  [1m[35m (0.5ms)[0m  DROP INDEX "index_relationships_on_follower_id"
+  [1m[36m (6.7ms)[0m  [1mDROP TABLE "relationships"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130315230445'
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRelationships (20130315230445)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20130315230445"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Migrating to CreateGames (20140609013801)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140609013801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140609013801"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateMetaData (20140609053827)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "meta_data" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140609053827"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DoStuff (20140609210213)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
